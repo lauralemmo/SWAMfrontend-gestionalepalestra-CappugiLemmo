@@ -19,15 +19,15 @@ export class RegisterPt {
     private router: Router
   ){
     this.ptForm = this.fb.group({
-      nome: ['', [Validators.required]],
-      cognome: ['', [Validators.required]],
-      codicefiscale: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(16)]],
-      nascita: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      surname: ['', [Validators.required]],
+      tax_code: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(16)]],
+      birth_date: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      telefono: ['', [Validators.required]],
+      phone_number: ['', [Validators.required]],
       username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      stipendio: ['', [Validators.required]],
+      salary: ['', [Validators.required]],
       active: [true]
     });
   }
@@ -37,7 +37,7 @@ export class RegisterPt {
       this.ptService.createPersonalTrainer(this.ptForm.value).subscribe({
         next: (res) => {
           // Il tuo backend restituisce l'oggetto creato col suo ID unico
-          alert('Personal Trainer "${res.name} ${res.surname}" registrato con successo!\nPrendi nota del suo ID generato: ${res.id}');
+          alert(`Personal Trainer "${res.name} ${res.surname}" registrato con successo!`);
           this.ptForm.reset({ salary: 1200 });
         },
         error: (err) => {

@@ -20,7 +20,7 @@ export class RegisterCourse {
     private router: Router
   ){
     this.cForm = this.fb.group({
-      nome: ['', [Validators.required]],
+      name: ['', [Validators.required]],
       numMax: ['', [Validators.required]],
       idPersonalTrainer: ['', [Validators.required]],
       numMembers: [0]
@@ -31,7 +31,7 @@ export class RegisterCourse {
     if (this.cForm.valid) {
       this.cService.createCourse(this.cForm.value).subscribe({
         next: (res) => {
-          alert('Corso "${res.name}" inserito con successo con ID: ${res.idCourse}');
+          alert(`Corso "${res.name}" inserito con successo`);
           this.cForm.reset({ maxMembers: 10 }); // Resetta il form impostando il default
         },
         error: (err) => {

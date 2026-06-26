@@ -1,30 +1,27 @@
-<p>register-pt works!</p>
-
-
 <form [formGroup]="ptForm" (ngSubmit)="onPtSubmit()" class="form-container">
 
 
   <mat-form-field>
     <mat-label>Nome</mat-label>
-    <input matInput formControlName="nome">
+    <input matInput formControlName="name">
   </mat-form-field>
 
 
   <mat-form-field>
     <mat-label>Cognome</mat-label>
-    <input matInput formControlName="cognome">
+    <input matInput formControlName="surname">
   </mat-form-field>
 
 
   <mat-form-field>
     <mat-label>Codice Fiscale</mat-label>
-    <input matInput formControlName="codicefiscale">
+    <input matInput formControlName="tax_code">
   </mat-form-field>
 
 
   <mat-form-field>
     <mat-label>Data di nascita</mat-label>
-    <input matInput [matDatepicker]="pickernascita" formControlName="nascita">
+    <input matInput [matDatepicker]="pickernascita" formControlName="birth_date">
     <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="pickernascita"></mat-datepicker-toggle>
     <mat-datepicker #pickernascita></mat-datepicker>
@@ -39,7 +36,7 @@
 
   <mat-form-field>
     <mat-label>Telefono</mat-label>
-    <input matInput formControlName="telefono">
+    <input matInput formControlName="phone_number">
   </mat-form-field>
 
 
@@ -57,7 +54,7 @@
 
   <mat-form-field>
     <mat-label>Stipendio</mat-label>
-    <input matInput formControlName="stipendio">
+    <input matInput formControlName="salary">
   </mat-form-field>
 
 

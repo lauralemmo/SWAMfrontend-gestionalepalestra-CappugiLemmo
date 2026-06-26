@@ -1,4 +1,4 @@
-.button {
+/*.button {
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -19,4 +19,202 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+}*/
+
+
+/* Sfondo pagina */
+body {
+  margin: 0;
+  /*background: linear-gradient(135deg, #eef2f7, #dfe9f3);*/
+  background: #000;
+  font-family: Roboto, sans-serif;
+}
+
+/* Pulsante Login */
+.button {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.button button {
+  min-width: 180px;
+  height: 48px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all .3s ease;
+}
+
+.button button:hover {
+  transform: translateY(-3px);
+}
+
+/* Contenitore abbonamenti */
+.abbonamenti {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px;
+}
+
+/* Card */
+.abbonamento-card {
+  position: relative;
+  width: 320px;
+  min-height: 520px;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: .35s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+}
+
+/* Barra colorata superiore */
+.abbonamento-card::before {
+  content: "";
+  display: block;
+  height: 6px;
+  background: linear-gradient(90deg, #1976d2, #42a5f5);
+}
+
+/* Hover card */
+.abbonamento-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .25);
+}
+
+/* Piano consigliato */
+.premium::before {
+  background: linear-gradient(90deg, #ff9800, #ffc107);
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: 18px;
+  right: -40px;
+  background: #ff9800;
+  color: white;
+  padding: 8px 45px;
+  transform: rotate(35deg);
+  font-size: 13px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,.3);
+}
+
+/* Header */
+mat-card-header {
+  margin-bottom: 20px;
+}
+
+mat-card-title {
+  font-size: 24px !important;
+  font-weight: bold !important;
+}
+
+mat-card-subtitle {
+  color: #1976d2 !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+}
+
+/* Contenuto */
+mat-card-content {
+  flex: 1;
+}
+
+mat-card-content p {
+  color: #555;
+  line-height: 1.6;
+}
+
+mat-card-content ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+mat-card-content li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ececec;
+  font-size: 15px;
+}
+
+mat-card-content li:last-child {
+  border-bottom: none;
+}
+
+/* Pulsante */
+mat-card-actions {
+  padding: 20px;
+}
+
+mat-card-actions button {
+  width: 100%;
+  height: 48px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: .3s;
+}
+
+mat-card-actions button:hover {
+  transform: scale(1.03);
+}
+
+/* Animazione */
+.abbonamento-card {
+  animation: comparsa .7s ease;
+}
+
+@keyframes comparsa {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .button {
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .abbonamenti {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .abbonamento-card {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+
+.hero {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #666;
 }

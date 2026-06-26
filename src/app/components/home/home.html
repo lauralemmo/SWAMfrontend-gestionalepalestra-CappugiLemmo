@@ -1,6 +1,6 @@
-<div class="button">
-    <button matFab extended>
-      Basic
+<!--<div class="button">
+    <button matFab extended (click)="login()">
+      Login
     </button>
 </div>
 
@@ -12,7 +12,7 @@
   <mat-card class="abbonamento-card">
     <mat-card-header>
       <mat-card-title>Abbonamento Mensile</mat-card-title>
-      <mat-card-subtitle>29€ al mese</mat-card-subtitle>
+      <mat-card-subtitle>49.99€ al mese</mat-card-subtitle>
     </mat-card-header>
 
     <mat-card-content>
@@ -34,7 +34,7 @@
       <p>Accesso illimitato a tutte le sale e attrezzature, dal lunedì al sabato.</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary">Scegli</button>
+      <button mat-raised-button color="primary" (click)="register()">Scegli</button>
     </mat-card-actions>
   </mat-card>
 
@@ -48,7 +48,7 @@
       <p>Accesso illimitato a tutte le sale e attrezzature, dal lunedì al sabato.</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary">Scegli</button>
+      <button mat-raised-button color="primary" (click)="register()">Scegli</button>
     </mat-card-actions>
   </mat-card>
 
@@ -62,9 +62,152 @@
       <p>Accesso illimitato a tutte le sale e attrezzature, dal lunedì al sabato.</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary">Scegli</button>
+      <button mat-raised-button color="primary" (click)="register()">Scegli</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>-->
+
+
+<div class="button">
+  <button matFab extended color="primary" (click)="login()">
+    <mat-icon>login</mat-icon>
+    Login
+  </button>
+</div>
+
+
+<div class="hero">
+  <h1>Benvenuto in LS Gym!</h1>
+  <p>Scegli il tuo abbonamento e allenati quando vuoi con piani flessibili pensati per ogni esigenza.</p>
+</div>
+
+
+
+
+<div class="abbonamenti">
+
+  <!-- Mensile -->
+  <mat-card class="abbonamento-card">
+    <mat-card-header>
+      <mat-icon mat-card-avatar>calendar_month</mat-icon>
+      <mat-card-title>Abbonamento Mensile</mat-card-title>
+      <mat-card-subtitle>49,99 € / mese</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>
+        Perfetto per chi desidera iniziare il proprio percorso in palestra
+        senza vincoli a lungo termine.
+      </p>
+
+      <ul>
+        <li>✔ Accesso illimitato alla palestra</li>
+        <li>✔ Sala pesi e area cardio</li>
+        <li>✔ Spogliatoi inclusi</li>
+        <li>✔ Assistenza del personale</li>
+      </ul>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary" (click)="register()">
+        Scegli Piano
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <!-- Trimestrale -->
+  <mat-card class="abbonamento-card premium">
+
+    <div class="badge">
+      ⭐ Più scelto
+    </div>
+
+    <mat-card-header>
+      <mat-icon mat-card-avatar>workspace_premium</mat-icon>
+      <mat-card-title>Abbonamento Trimestrale</mat-card-title>
+      <mat-card-subtitle>119,99 € / 3 mesi</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>
+        Ideale per chi vuole allenarsi con continuità risparmiando rispetto
+        al piano mensile.
+      </p>
+
+      <ul>
+        <li>✔ Accesso illimitato</li>
+        <li>✔ Tutti i corsi inclusi</li>
+        <li>✔ Programma di allenamento personalizzato</li>
+        <li>✔ Consulenza iniziale gratuita</li>
+      </ul>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button color="accent" (click)="register()">
+        Scegli Piano
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <!-- Semestrale -->
+  <mat-card class="abbonamento-card">
+
+    <mat-card-header>
+      <mat-icon mat-card-avatar>fitness_center</mat-icon>
+      <mat-card-title>Abbonamento Semestrale</mat-card-title>
+      <mat-card-subtitle>219,99 € / 6 mesi</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>
+        Pensato per chi desidera risultati concreti con un impegno di medio
+        periodo.
+      </p>
+
+      <ul>
+        <li>✔ Accesso illimitato</li>
+        <li>✔ Tutti i corsi fitness</li>
+        <li>✔ Scheda personalizzata aggiornata</li>
+        <li>✔ 1 consulenza nutrizionale</li>
+      </ul>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary" (click)="register()">
+        Scegli Piano
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <!-- Annuale -->
+  <mat-card class="abbonamento-card">
+
+    <mat-card-header>
+      <mat-icon mat-card-avatar>emoji_events</mat-icon>
+      <mat-card-title>Abbonamento Annuale</mat-card-title>
+      <mat-card-subtitle>369,99 € / anno</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>
+        La soluzione più conveniente per allenarsi tutto l'anno senza pensieri.
+      </p>
+
+      <ul>
+        <li>✔ Accesso illimitato 365 giorni</li>
+        <li>✔ Tutti i corsi inclusi</li>
+        <li>✔ Programmi personalizzati illimitati</li>
+        <li>✔ Consulenze con personal trainer</li>
+        <li>✔ Sconto su eventi e servizi esclusivi</li>
+      </ul>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary" (click)="register()">
+        Scegli Piano
+      </button>
     </mat-card-actions>
   </mat-card>
 
 </div>
-

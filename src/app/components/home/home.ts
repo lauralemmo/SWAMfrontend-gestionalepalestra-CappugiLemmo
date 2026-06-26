@@ -14,4 +14,8 @@ export class Home {
   register(): void{
     this.router.navigate(['/register']);
   }
+
+  login(): void{
+    this.router.navigate(['/login']);
+  }
 }
