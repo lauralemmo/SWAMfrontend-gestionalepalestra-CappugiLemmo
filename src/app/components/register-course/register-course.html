@@ -1,0 +1,31 @@
+<p>register-course works!</p>
+
+
+<form [formGroup]="cForm" (ngSubmit)="onCourseSubmit()" class="form-container">
+
+
+  <mat-form-field>
+    <mat-label>Nome corso</mat-label>
+    <input matInput formControlName="nome">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Posti massimi disponibili</mat-label>
+    <input matInput formControlName="numMax">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>ID personal trainer responsabile</mat-label>
+    <input matInput formControlName="idPersonalTrainer">
+  </mat-form-field>
+
+
+  <button matButton="outlined" color="primary" type="submit" [disabled]="cForm.invalid">
+    Crea
+  </button>
+
+
+</form>
+

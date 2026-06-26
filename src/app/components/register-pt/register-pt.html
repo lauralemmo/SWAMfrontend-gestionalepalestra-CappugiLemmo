@@ -1,0 +1,69 @@
+<p>register-pt works!</p>
+
+
+<form [formGroup]="ptForm" (ngSubmit)="onPtSubmit()" class="form-container">
+
+
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput formControlName="nome">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Cognome</mat-label>
+    <input matInput formControlName="cognome">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Codice Fiscale</mat-label>
+    <input matInput formControlName="codicefiscale">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Data di nascita</mat-label>
+    <input matInput [matDatepicker]="pickernascita" formControlName="nascita">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="pickernascita"></mat-datepicker-toggle>
+    <mat-datepicker #pickernascita></mat-datepicker>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Telefono</mat-label>
+    <input matInput formControlName="telefono">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput formControlName="username">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Stipendio</mat-label>
+    <input matInput formControlName="stipendio">
+  </mat-form-field>
+
+
+  <button matButton="outlined" color="primary" type="submit" [disabled]="ptForm.invalid">
+    Crea
+  </button>
+
+
+</form>

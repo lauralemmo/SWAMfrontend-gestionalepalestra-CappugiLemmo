@@ -1,0 +1,94 @@
+<h1>Registrazione</h1>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form-container">
+
+
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput formControlName="nome">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Cognome</mat-label>
+    <input matInput formControlName="cognome">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Codice Fiscale</mat-label>
+    <input matInput formControlName="codicefiscale">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Data di nascita</mat-label>
+    <input matInput [matDatepicker]="pickernascita" formControlName="nascita">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="pickernascita"></mat-datepicker-toggle>
+    <mat-datepicker #pickernascita></mat-datepicker>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Telefono</mat-label>
+    <input matInput formControlName="telefono">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput formControlName="username">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Altezza</mat-label>
+    <input matInput formControlName="altezza">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Peso</mat-label>
+    <input matInput formControlName="peso">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Tipo di abbonamento</mat-label>
+    <mat-select formControlName="abbonamento">
+      <mat-option value="MONTHLY">Mensile</mat-option>
+      <mat-option value="QUARTERLY">Trimestrale</mat-option>
+      <mat-option value="SEMI_ANNUAL">Semestrale</mat-option>
+      <mat-option value="ANNUAL">Annuale</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Data di inizio</mat-label>
+    <input matInput [matDatepicker]="pickerinizio" formControlName="inizio">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="pickerinizio"></mat-datepicker-toggle>
+    <mat-datepicker #pickerinizio></mat-datepicker>
+  </mat-form-field>
+
+
+  <button matButton="outlined" color="primary" type="submit" [disabled]="myForm.invalid">
+    Invia
+  </button>
+
+
+</form>

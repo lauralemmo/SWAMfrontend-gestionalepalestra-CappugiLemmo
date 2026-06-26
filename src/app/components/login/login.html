@@ -1,0 +1,21 @@
+<h1>Login</h1>
+
+<form [formGroup]="myForm" (ngSubmit)="onLogin()" class="form-container">
+
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput formControlName="username">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password">
+  </mat-form-field>
+
+
+  <button matButton="outlined" color="primary" type="submit" [disabled]="myForm.invalid">
+    Invia
+  </button>
+
+</form>

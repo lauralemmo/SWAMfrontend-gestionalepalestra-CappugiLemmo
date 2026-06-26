@@ -1,0 +1,30 @@
+<div class="booking-container">
+  <h1>Prenota una lezione</h1>
+
+  <div class="toolbar-calendario">
+    <button mat-stroked-button (click)="settimanaPrecedente()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+
+    <button mat-stroked-button (click)="oggi()">Oggi</button>
+
+    <button mat-stroked-button (click)="settimanaSuccessiva()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+
+    <h2 class="titolo-settimana">{{ viewDate | date:'MMMM yyyy' }}</h2>
+  </div>
+
+  <div [ngSwitch]="view">
+    <mwl-calendar-week-view
+      *ngSwitchCase="CalendarView.Week"
+      [viewDate]="viewDate"
+      [events]="eventiPalestra"
+      [refresh]="refresh"
+      [dayStartHour]="8"
+      [dayEndHour]="20"
+      [hourSegments]="4"
+      (eventClicked)="eventoCliccato($event)"
+    ></mwl-calendar-week-view>
+  </div>
+</div>
