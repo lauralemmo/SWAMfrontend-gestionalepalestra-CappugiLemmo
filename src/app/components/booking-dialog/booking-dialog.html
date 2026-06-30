@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Conferma Prenotazione</h2>
+
+<form [formGroup]="bookingForm" (ngSubmit)="onBookingSubmit()">
+  <mat-dialog-content class="mat-typography">
+    <p>Vuoi confermare la tua prenotazione per il corso di <strong>{{ data.courseName }}</strong>?</p>
+
+    <div class="booking-details" style="margin-top: 15px; padding: 15px; background-color: #f9f9f9; border-radius: 4px; border-left: 4px solid #3f51b5;">
+      <p style="margin-bottom: 8px;"><strong>Giorno:</strong> {{ data.start| date:'EEEE dd MMMM yyyy' }}</p>
+      <p style="margin-bottom: 8px;"><strong>Orario:</strong> {{ data.hoursOriginal[0] | number:'2.0' }}:{{ data.hoursOriginal[1] | number:'2.0' }}</p>
+
+      <p style="margin-bottom: 0; margin-top: 12px; font-weight: 500;"
+         [style.color]="(data.numMax - data.numMembers) <= 3 ? 'red' : 'green'">
+        <strong>Posti liberi:</strong> {{ data.numMax - data.numMembers }} su {{ data.numMax }}
+      </p>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="annulla()">Annulla</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="bookingForm.invalid || (data.numMax - data.numMembers) <= 0">
+      {{ (data.numMax - data.numMembers) <= 0 ? 'Corso Pieno' : 'Prenota ora' }}
+    </button>
+  </mat-dialog-actions>
+</form>

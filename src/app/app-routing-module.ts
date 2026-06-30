@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'register', component: Register },
   { path: 'login', component: Login },
   { path: 'athlete', component: HomeAthlete, canActivate: [athleteGuard] },
-  { path: 'booking', component: Booking},
+  { path: 'booking', component: Booking, canActivate: [athleteGuard]},
   { path: 'admin', component: HomeAdmin,  canActivate: [adminGuard]},
   { path: 'register-pt', component: RegisterPt},
   { path: 'create-course', component: RegisterCourse},

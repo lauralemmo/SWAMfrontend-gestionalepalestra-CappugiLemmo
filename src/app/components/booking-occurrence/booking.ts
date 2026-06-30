@@ -4,6 +4,9 @@ import { Subject } from 'rxjs';
 import {OccurrenceModel} from '../../models/occurrence.model';
 import {HttpClient} from '@angular/common/http';
 import {OccurrenceService} from '../../services/occurrence.service';
+import { MatDialog } from '@angular/material/dialog';
+import { BookingDialog } from '../booking-dialog/booking-dialog';
+
 
 @Component({
   selector: 'app-booking',
@@ -47,7 +50,7 @@ export class Booking implements OnInit {
 
 
 
-  constructor(private http: HttpClient, private occurrenceService: OccurrenceService) {}
+  constructor(private http: HttpClient, private occurrenceService: OccurrenceService, private dialog: MatDialog) {}
 
 
   ngOnInit(): void {
@@ -114,6 +117,7 @@ export class Booking implements OnInit {
         meta: {
           idOccurrence: occ.idOccurrence,
           courseId: occ.courseId,
+          hoursOriginal: occ.hours,
         }
       };
     });
@@ -156,8 +160,24 @@ export class Booking implements OnInit {
 
   eventoCliccato(evento: any): void {
     const e = evento.event;
-    console.log('Evento cliccato:', e);
-    // qui in futuro apriremo un mat-dialog per la prenotazione
+
+    const dialogRef = this.dialog.open(BookingDialog, {
+      width: '420px',
+      data: {
+        courseId: e.meta.courseId,
+        courseName: e.title,
+        start: e.start,
+        hoursOriginal: e.meta.hoursOriginal,
+        numMax: e.meta.numMax,
+        numMembers: e.meta.numMembers
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(prenotazioneCompletata => {
+      if (prenotazioneCompletata) {
+        this.caricaOccorrenze(); // Rinfresca il calendario per mostrare eventuali aggiornamenti (es. posti aggiornati)
+      }
+    });
   }
 
 

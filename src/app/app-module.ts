@@ -37,6 +37,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { HomeAdmin } from './components/home-admin/home-admin';
 import { RegisterPt } from './components/register-pt/register-pt';
 import { RegisterCourse } from './components/register-course/register-course';
+import { BookingDialog } from './components/booking-dialog/booking-dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { RegisterCourse } from './components/register-course/register-course';
     Home,
     HomeAthlete,
     Booking,
+    BookingDialog,
     HomeAdmin,
     RegisterPt,
     RegisterCourse,
@@ -73,6 +76,7 @@ import { RegisterCourse } from './components/register-course/register-course';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatDialogModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
