@@ -1,0 +1,223 @@
+<!--<div class="container">-->
+<!--  <h1>Le Mie Prenotazioni</h1>-->
+
+<!--  &lt;!&ndash; 1. Messaggio di caricamento &ndash;&gt;-->
+<!--  <div *ngIf="isLoading" class="loading-spinner">-->
+<!--    <mat-spinner></mat-spinner>-->
+<!--    <p>Caricamento delle prenotazioni in corso...</p>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; 2. Tabella dei risultati &ndash;&gt;-->
+<!--  <div *ngIf="!isLoading">-->
+<!--    <div *ngIf="displayableBookings.length === 0; else bookingsTable" class="no-bookings-message">-->
+<!--      <p>Non hai nessuna prenotazione attiva al momento.</p>-->
+<!--    </div>-->
+
+<!--    <ng-template #bookingsTable>-->
+<!--      <table mat-table [dataSource]="displayableBookings" class="mat-elevation-z8">-->
+
+<!--        &lt;!&ndash; Colonna Nome Corso (Modificata) &ndash;&gt;-->
+<!--        <ng-container matColumnDef="courseName">-->
+<!--          <th mat-header-cell *matHeaderCellDef> Corso </th>-->
+<!--          <td mat-cell *matCellDef="let booking"> {{booking.courseName}} </td>-->
+<!--        </ng-container>-->
+
+<!--        &lt;!&ndash; Colonna Data &ndash;&gt;-->
+<!--        <ng-container matColumnDef="date">-->
+<!--          <th mat-header-cell *matHeaderCellDef> Data </th>-->
+<!--          <td mat-cell *matCellDef="let booking"> {{booking.date}} </td>-->
+<!--        </ng-container>-->
+
+<!--        &lt;!&ndash; Colonna Orario &ndash;&gt;-->
+<!--        <ng-container matColumnDef="hours">-->
+<!--          <th mat-header-cell *matHeaderCellDef> Orario </th>-->
+<!--          <td mat-cell *matCellDef="let booking"> {{booking.hours}} </td>-->
+<!--        </ng-container>-->
+
+<!--        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+<!--        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
+<!--      </table>-->
+<!--    </ng-template>-->
+<!--  </div>-->
+<!--</div>-->
+<div class="pagina-prenotazioni">
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="page-header">
+
+      <div>
+        <div class="page-badge">AREA PERSONALE</div>
+
+        <h1>Le Mie Prenotazioni</h1>
+
+        <p style="color: #1976d2">
+          Visualizza e gestisci le tue prenotazioni attive.
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- LOADING -->
+    <div *ngIf="isLoading" class="loading-card">
+
+      <mat-spinner></mat-spinner>
+
+      <p>
+        Caricamento delle prenotazioni in corso...
+      </p>
+
+    </div>
+
+
+    <!-- RISULTATI -->
+    <div *ngIf="!isLoading">
+
+      <!-- NESSUNA PRENOTAZIONE -->
+      <div
+        *ngIf="displayableBookings.length === 0; else bookingsTable"
+        class="no-bookings-card">
+
+        <div class="empty-icon">
+          <mat-icon>event_busy</mat-icon>
+        </div>
+
+        <h2>Nessuna prenotazione</h2>
+
+        <p>
+          Non hai nessuna prenotazione attiva al momento.
+        </p>
+
+      </div>
+
+
+      <!-- TABELLA -->
+      <ng-template #bookingsTable>
+
+        <div class="table-card">
+
+          <div class="table-header">
+
+            <div>
+<!--              <h2>Le tue prenotazioni</h2>-->
+
+              <span>
+                <h2>
+                  {{ displayableBookings.length }}
+                  prenotazioni attive
+                </h2>
+              </span>
+            </div>
+
+            <div class="table-icon">
+              <mat-icon>calendar_month</mat-icon>
+            </div>
+
+          </div>
+
+
+          <div class="table-wrapper">
+
+            <table
+              mat-table
+              [dataSource]="displayableBookings">
+
+              <!-- CORSO -->
+              <ng-container matColumnDef="courseName">
+
+                <th mat-header-cell *matHeaderCellDef>
+                  Corso
+                </th>
+
+                <td mat-cell *matCellDef="let booking">
+
+                  <div class="course-cell">
+
+                    <div class="course-icon">
+                      <mat-icon>fitness_center</mat-icon>
+                    </div>
+
+                    <span>
+                      {{ booking.courseName }}
+                    </span>
+
+                  </div>
+
+                </td>
+
+              </ng-container>
+
+
+              <!-- DATA -->
+              <ng-container matColumnDef="date">
+
+                <th mat-header-cell *matHeaderCellDef>
+                  Data
+                </th>
+
+                <td mat-cell *matCellDef="let booking">
+
+                  <div class="info-cell">
+
+                    <mat-icon>event</mat-icon>
+
+                    <span>
+                      {{ booking.date }}
+                    </span>
+
+                  </div>
+
+                </td>
+
+              </ng-container>
+
+
+              <!-- ORARIO -->
+              <ng-container matColumnDef="hours">
+
+                <th mat-header-cell *matHeaderCellDef>
+                  Orario
+                </th>
+
+                <td mat-cell *matCellDef="let booking">
+
+                  <div class="info-cell">
+
+                    <mat-icon>schedule</mat-icon>
+
+                    <span>
+                      {{ booking.hours }}
+                    </span>
+
+                  </div>
+
+                </td>
+
+              </ng-container>
+
+
+              <tr
+                mat-header-row
+                *matHeaderRowDef="displayedColumns">
+              </tr>
+
+              <tr
+                mat-row
+                *matRowDef="let row; columns: displayedColumns;">
+              </tr>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </ng-template>
+
+    </div>
+
+  </div>
+
+</div>
