@@ -78,8 +78,8 @@
 
 
 <div class="hero">
-  <h1>Benvenuto in LS Gym!</h1>
-  <p>Scegli il tuo abbonamento e allenati quando vuoi con piani flessibili pensati per ogni esigenza.</p>
+  <h1>Benvenuto in LS Gym</h1>
+  <p>Il tuo percorso verso il benessere inizia qui. Scopri i nostri piani di abbonamento e trova quello perfetto per te.</p>
 </div>
 
 
@@ -103,14 +103,12 @@
 
       <ul>
         <li>✔ Accesso illimitato alla palestra</li>
-        <li>✔ Sala pesi e area cardio</li>
-        <li>✔ Spogliatoi inclusi</li>
-        <li>✔ Assistenza del personale</li>
+        <li>✔ Tutti i corsi inclusi</li>
       </ul>
     </mat-card-content>
 
     <mat-card-actions align="end">
-      <button mat-raised-button color="primary" (click)="register()">
+      <button mat-raised-button color="primary" (click)="register('MONTHLY')">
         Scegli Piano
       </button>
     </mat-card-actions>
@@ -136,15 +134,14 @@
       </p>
 
       <ul>
-        <li>✔ Accesso illimitato</li>
+        <li>✔ Accesso illimitato alla palestra</li>
         <li>✔ Tutti i corsi inclusi</li>
         <li>✔ Programma di allenamento personalizzato</li>
-        <li>✔ Consulenza iniziale gratuita</li>
       </ul>
     </mat-card-content>
 
     <mat-card-actions align="end">
-      <button mat-raised-button color="accent" (click)="register()">
+      <button mat-raised-button color="accent" (click)="register('QUARTERLY')">
         Scegli Piano
       </button>
     </mat-card-actions>
@@ -166,15 +163,15 @@
       </p>
 
       <ul>
-        <li>✔ Accesso illimitato</li>
-        <li>✔ Tutti i corsi fitness</li>
-        <li>✔ Scheda personalizzata aggiornata</li>
+        <li>✔ Accesso illimitato alla palestra</li>
+        <li>✔ Tutti i corsi inclusi</li>
+        <li>✔ Programma di allenamento personalizzato</li>
         <li>✔ 1 consulenza nutrizionale</li>
       </ul>
     </mat-card-content>
 
     <mat-card-actions align="end">
-      <button mat-raised-button color="primary" (click)="register()">
+      <button mat-raised-button color="primary" (click)="register('SEMI_ANNUAL')">
         Scegli Piano
       </button>
     </mat-card-actions>
@@ -195,16 +192,16 @@
       </p>
 
       <ul>
-        <li>✔ Accesso illimitato 365 giorni</li>
+        <li>✔ Accesso illimitato alla palestra</li>
         <li>✔ Tutti i corsi inclusi</li>
-        <li>✔ Programmi personalizzati illimitati</li>
-        <li>✔ Consulenze con personal trainer</li>
-        <li>✔ Sconto su eventi e servizi esclusivi</li>
+        <li>✔ Programma di allenamento personalizzato</li>
+        <li>✔ consulenze nutrizionali illimitate</li>
+        <li>✔ Sospensione abbonamento fino ad un mese </li>
       </ul>
     </mat-card-content>
 
     <mat-card-actions align="end">
-      <button mat-raised-button color="primary" (click)="register()">
+      <button mat-raised-button color="primary" (click)="register('ANNUAL')">
         Scegli Piano
       </button>
     </mat-card-actions>

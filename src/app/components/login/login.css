@@ -1,7 +1,168 @@
+/* ==========================================================================
+   1. SFONDO GLOBALE & TIPOGRAFIA AD ALTO CONTRASTO
+   ========================================================================== */
+body {
+  margin: 0;
+  font-family: Roboto, -apple-system, sans-serif;
+  background: #09111e; /* Sfondo ancora più scuro per far risaltare la card */
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   2. FORM CONTAINER
+   ========================================================================== */
 .form-container {
+  width: 90%;
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 36px 32px;
+
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  margin: 40px auto;
-  gap: 8px;
+  gap: 20px;
+
+  /* Aumentata l'opacità per un fondo più solido e meno "trasparente/sbiadito" */
+  background: #1565C0;
+  border-radius: 24px;
+  /* Bordo nettamente più visibile */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   3. HEADER
+   ========================================================================== */
+.form-header {
+  text-align: center;
+  margin-bottom: 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.form-header .header-icon {
+  font-size: 36px;
+  width: 36px;
+  height: 36px;
+  color: #38bdf8; /* Azzurro elettrico brillante */
+  margin-bottom: 6px;
+}
+
+.form-header h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  color: #ffffff !important; /* Bianco puro */
+  letter-spacing: -0.02em;
+}
+
+.form-header p {
+  font-size: 13.5px;
+  color: #cbd5e1 !important; /* Grigio/Bianco molto chiaro (prima era grigio scuro) */
+  margin: 0;
+  line-height: 1.4;
+}
+/* ==========================================================================
+   INPUT A COLORE UNICO SOLIDO (BIANCO PURO / TESTO NERO)
+   ========================================================================== */
+
+/* 1. Rende l'intero box dell'input (inclusa l'etichetta) un unico blocco BIANCO */
+.mat-mdc-form-field-flex,
+.mat-mdc-text-field-wrapper,
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #ffffff !important; /* Colore unico per TUTTO il rettangolo */
+  border-radius: 10px !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+/* 2. Rimuove la striscia/rettangolo bianco interno e gli effetti di Material */
+.mdc-text-field__input,
+.mat-mdc-form-field-infix,
+.mat-mdc-form-field-focus-overlay,
+.mdc-text-field__ripple {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* 3. TESTO DIGITATO (Nero e uniforme) */
+.mat-mdc-input-element,
+input.mat-mdc-input-element,
+.mat-mdc-form-field input {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  background: transparent !important;
+}
+
+/* 4. LABEL (Username / Password) */
+.mat-mdc-floating-label,
+.mat-mdc-floating-label mat-label,
+mat-label {
+  color: #475569 !important; /* Grigio scuro leggibile sul bianco */
+  font-weight: 600 !important;
+}
+
+/* Label attiva */
+.mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
+  color: #0284c7 !important;
+}
+
+/* 5. FIX AUTOFILL BROWSER (Mantiene lo sfondo bianco e testo nero) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #000000 !important;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+/* ==========================================================================
+   5. BOTTONE
+   ========================================================================== */
+button[type="submit"] {
+  width: 100%;
+  height: 50px;
+  margin-top: 8px;
+
+  border: none !important;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  background: linear-gradient(90deg, #ff9800, #ffc107) !important;
+  color: #ffffff !important;
+  cursor: pointer;
+
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:not([disabled]):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.6);
+  filter: brightness(1.15);
+}
+
+/* Stato disabilitato: reso ben distinto e leggibile ma opaco */
+button[type="submit"][disabled] {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #94a3b8 !important; /* Testo leggibile anche da disabilitato */
+  box-shadow: none !important;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 24px 20px;
+    width: 92%;
+  }
 }

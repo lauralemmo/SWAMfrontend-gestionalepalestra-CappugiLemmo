@@ -8,11 +8,21 @@ import {Router} from '@angular/router';
   styleUrl: './home-athlete.css',
 })
 export class HomeAthlete {
-
-  constructor(private router: Router) {}
+  username: string | null;
+  constructor(private router: Router) {
+    this.username = localStorage.getItem('username');
+  }
 
   create(): void{
     this.router.navigate(['/booking']);
   }
 
+  logout(): void {
+    localStorage.clear();
+    this.router.navigate(['/']);
+  }
+
+  viewBookings(): void {
+    this.router.navigate(['/my-bookings']);
+  }
 }

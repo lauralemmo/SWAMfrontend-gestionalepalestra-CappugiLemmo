@@ -10,16 +10,18 @@ import {HomeAdmin} from './components/home-admin/home-admin';
 import {adminGuard} from './security/admin';
 import {RegisterPt} from './components/register-pt/register-pt';
 import {RegisterCourse} from './components/register-course/register-course';
+import {ViewBooking} from './components/view-booking/view-booking';
 
 const routes: Routes = [
   { path: '', component: Home },
-  { path: 'register', component: Register },
+  { path: 'register/:piano', component: Register },
   { path: 'login', component: Login },
   { path: 'athlete', component: HomeAthlete, canActivate: [athleteGuard] },
   { path: 'booking', component: Booking, canActivate: [athleteGuard]},
   { path: 'admin', component: HomeAdmin,  canActivate: [adminGuard]},
   { path: 'register-pt', component: RegisterPt},
   { path: 'create-course', component: RegisterCourse},
+  { path: 'my-bookings', component: ViewBooking, canActivate: [athleteGuard] },
 ];
 
 @NgModule({

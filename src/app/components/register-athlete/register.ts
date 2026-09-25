@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AthleteService} from '../../services/athlete.service';
-import {Router} from '@angular/router';
+import { AthleteService } from '../../services/athlete.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import {AthleteModel} from '../../models/athlete.model';
 
 
@@ -14,13 +14,14 @@ import {AthleteModel} from '../../models/athlete.model';
 
 
 
-export class Register {
+export class Register implements OnInit{
   myForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private athleteService: AthleteService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.myForm = this.fb.group({
       nome: ['', [Validators.required]],
@@ -38,7 +39,16 @@ export class Register {
     });
   }
 
-
+  ngOnInit(): void {
+    const pianoSelezionato = this.route.snapshot.paramMap.get('piano');
+    console.log("Valore letto dalla URL:", pianoSelezionato);
+    if (pianoSelezionato) {
+      // Imposta il valore nel form automaticamente
+      this.myForm.patchValue({
+        abbonamento: pianoSelezionato
+      });
+    }
+  }
 
   onSubmit() {
     if (this.myForm.invalid) {

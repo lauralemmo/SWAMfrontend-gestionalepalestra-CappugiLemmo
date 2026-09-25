@@ -23,7 +23,7 @@ export class RegisterCourse {
       name: ['', [Validators.required]],
       numMax: ['', [Validators.required]],
       idPersonalTrainer: ['', [Validators.required]],
-      numMembers: [0]
+      // numMembers: [0]
     });
   }
 

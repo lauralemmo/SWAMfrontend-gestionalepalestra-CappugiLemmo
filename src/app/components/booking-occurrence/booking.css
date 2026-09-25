@@ -16,3 +16,8 @@
   text-transform: capitalize;
 }
 
+.booking-container h1 {
+  color: #ff9800;
+  font-size: 42px;
+}
+

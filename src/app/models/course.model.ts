@@ -1,6 +1,6 @@
 export interface CourseModel {
   name: string;
-  numMembers: number;
+  // numMembers: number;
   numMax: number;
   idPersonalTrainer: number;
 }

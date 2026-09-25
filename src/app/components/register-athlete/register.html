@@ -1,7 +1,12 @@
-<h1>Registrazione</h1>
 
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="form-container">
 
+  <!-- Header del Form -->
+  <div class="form-header">
+    <mat-icon class="header-icon">person_add</mat-icon>
+    <h2>Registrazione</h2>
+    <p>Crea il tuo account per accedere a tutti i servizi della palestra</p>
+  </div>
 
   <mat-form-field>
     <mat-label>Nome</mat-label>
@@ -50,7 +55,7 @@
 
   <mat-form-field>
     <mat-label>Password</mat-label>
-    <input matInput formControlName="password">
+    <input matInput formControlName="password" type="password">
   </mat-form-field>
 
 

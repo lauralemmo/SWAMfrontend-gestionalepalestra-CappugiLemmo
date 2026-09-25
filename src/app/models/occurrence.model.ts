@@ -4,4 +4,5 @@ export interface OccurrenceModel {
   hours: number[];
   courseId: number;
   courseName: string;
+  numMax: number;
 }

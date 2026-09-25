@@ -39,6 +39,9 @@ import { RegisterPt } from './components/register-pt/register-pt';
 import { RegisterCourse } from './components/register-course/register-course';
 import { BookingDialog } from './components/booking-dialog/booking-dialog';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ViewBooking } from './components/view-booking/view-booking';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -52,6 +55,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     HomeAdmin,
     RegisterPt,
     RegisterCourse,
+    ViewBooking,
   ],
   imports: [
     BrowserModule,
@@ -81,6 +85,8 @@ import { MatDialogModule } from '@angular/material/dialog';
       provide: DateAdapter,
       useFactory: adapterFactory,
     }),
+    MatTableModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

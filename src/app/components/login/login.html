@@ -1,21 +1,26 @@
-<h1>Login</h1>
-
 <form [formGroup]="myForm" (ngSubmit)="onLogin()" class="form-container">
 
+  <!-- Header integrato dentro la Card -->
+  <div class="form-header">
+    <mat-icon class="header-icon">lock</mat-icon>
+    <h2>Accedi</h2>
+    <p>Inserisci le tue credenziali per entrare nell'area riservata</p>
+  </div>
+
+  <!-- Campi Input -->
   <mat-form-field>
     <mat-label>Username</mat-label>
     <input matInput formControlName="username">
   </mat-form-field>
-
 
   <mat-form-field>
     <mat-label>Password</mat-label>
     <input matInput formControlName="password" type="password">
   </mat-form-field>
 
-
-  <button matButton="outlined" color="primary" type="submit" [disabled]="myForm.invalid">
-    Invia
+  <!-- Bottone Invio -->
+  <button mat-raised-button type="submit" [disabled]="myForm.invalid">
+    Accedi
   </button>
 
 </form>

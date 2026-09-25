@@ -8,14 +8,13 @@ import { Router } from '@angular/router';
   styleUrl: './home.css',
 })
 export class Home {
-
   constructor(private router: Router) {}
 
-  register(): void{
-    this.router.navigate(['/register']);
+  register(piano: string): void {
+    this.router.navigate(['/register', piano]);
   }
 
-  login(): void{
+  login(): void {
     this.router.navigate(['/login']);
   }
 }
