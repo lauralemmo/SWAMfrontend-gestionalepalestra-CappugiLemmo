@@ -14,7 +14,6 @@ export interface AthleteModel {
 }
 
 export enum SubscriptionType {
-  // inserisci i valori del tuo enum Java, es:
   MONTHLY = 'MONTHLY',
   ANNUAL = 'ANNUAL',
   QUARTERLY = 'QUARTERLY',

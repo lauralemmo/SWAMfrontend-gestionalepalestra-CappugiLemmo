@@ -4,7 +4,7 @@
 body {
   margin: 0;
   font-family: Roboto, -apple-system, sans-serif;
-  background: #09111e; /* Sfondo ancora più scuro per far risaltare la card */
+  background: #09111e;
   color: #ffffff;
   min-height: 100vh;
   display: flex;
@@ -25,10 +25,8 @@ body {
   flex-direction: column;
   gap: 20px;
 
-  /* Aumentata l'opacità per un fondo più solido e meno "trasparente/sbiadito" */
   background: #1565C0;
   border-radius: 24px;
-  /* Bordo nettamente più visibile */
   border: 1px solid rgba(255, 255, 255, 0.2);
 
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
@@ -49,7 +47,7 @@ body {
   font-size: 36px;
   width: 36px;
   height: 36px;
-  color: #38bdf8; /* Azzurro elettrico brillante */
+  color: #38bdf8;
   margin-bottom: 6px;
 }
 
@@ -57,13 +55,13 @@ body {
   font-size: 26px;
   font-weight: 800;
   margin: 0 0 6px 0;
-  color: #ffffff !important; /* Bianco puro */
+  color: #ffffff !important;
   letter-spacing: -0.02em;
 }
 
 .form-header p {
   font-size: 13.5px;
-  color: #cbd5e1 !important; /* Grigio/Bianco molto chiaro (prima era grigio scuro) */
+  color: #cbd5e1 !important;
   margin: 0;
   line-height: 1.4;
 }
@@ -75,7 +73,7 @@ body {
 .mat-mdc-form-field-flex,
 .mat-mdc-text-field-wrapper,
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-  background-color: #ffffff !important; /* Colore unico per TUTTO il rettangolo */
+  background-color: #ffffff !important;
   border-radius: 10px !important;
   border: 1px solid #cbd5e1 !important;
 }
@@ -104,7 +102,7 @@ input.mat-mdc-input-element,
 .mat-mdc-floating-label,
 .mat-mdc-floating-label mat-label,
 mat-label {
-  color: #475569 !important; /* Grigio scuro leggibile sul bianco */
+  color: #475569 !important;
   font-weight: 600 !important;
 }
 
@@ -148,10 +146,9 @@ button[type="submit"]:not([disabled]):hover {
   filter: brightness(1.15);
 }
 
-/* Stato disabilitato: reso ben distinto e leggibile ma opaco */
 button[type="submit"][disabled] {
   background: rgba(255, 255, 255, 0.12) !important;
-  color: #94a3b8 !important; /* Testo leggibile anche da disabilitato */
+  color: #94a3b8 !important;
   box-shadow: none !important;
   cursor: not-allowed;
   transform: none;

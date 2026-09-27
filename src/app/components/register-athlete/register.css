@@ -1,18 +1,9 @@
-/*
-.form-container {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: 40px auto;
-  gap: 8px;
-}
-*/
 
 /* SFONDO E PAGINA (Uguale al Login) */
 body {
   margin: 0;
   font-family: Roboto, sans-serif;
-  background: #0d1b2a; /* Sfondo scuro del Login */
+  background: #0d1b2a;
   color: #fff;
   min-height: 100vh;
 }
@@ -86,7 +77,6 @@ button {
   font-weight: 700;
   letter-spacing: 0.5px;
 
-  /* Sfumatura Blu/Azzurra moderna come il Login */
   background: linear-gradient(90deg, #ff9800, #ffc107) !important;
   color: #ffffff !important;
   cursor: pointer;
