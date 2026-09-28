@@ -161,13 +161,13 @@ export class Booking implements OnInit {
 
   eventoCliccato(evento: any): void {
     const e = evento.event;
-    const occ = this.occorrenze.find(o => o.idOccurrence === e.meta.idOccurrence); // Recupera l'occorrenza originale
+    const occ = this.occorrenze.find(o => o.idOccurrence === e.meta.idOccurrence);
     console.log("Valore numMax passato al dialog:", e.meta.numMax);
 
     const dialogRef = this.dialog.open(BookingDialog, {
       width: '420px',
       data: {
-        courseId: e.meta.courseId,
+        occurrenceId: e.meta.idOccurrence,
         courseName: e.title,
         start: e.start,
         hoursOriginal: e.meta.hoursOriginal,
@@ -177,7 +177,7 @@ export class Booking implements OnInit {
 
     dialogRef.afterClosed().subscribe(prenotazioneCompletata => {
       if (prenotazioneCompletata) {
-        this.caricaOccorrenze(); // Rinfresca il calendario per mostrare eventuali aggiornamenti (es. posti aggiornati)
+        this.caricaOccorrenze();
       }
     });
   }

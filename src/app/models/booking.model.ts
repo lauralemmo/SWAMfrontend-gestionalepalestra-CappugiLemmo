@@ -1,6 +1,5 @@
 export interface BookingModel {
   date: string;
-  hours: string;
-  courseId: number;
+  occurrenceId: number;
   athleteId: number;
 }

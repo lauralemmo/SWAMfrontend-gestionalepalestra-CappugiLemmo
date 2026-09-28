@@ -15,11 +15,11 @@ export class BookingService {
   createBooking(request: BookingModel): Observable<void> {
     return this.http.post<void>(`${this.apiUrl}/register`, request);
   }
-  getLessonOccupancy(courseId: number, date: string, hours: string): Observable<{ booked: number }> {
+
+  getLessonOccupancy(occurrenceId: number, date: string): Observable<{ booked: number }> {
     const params = new HttpParams()
-      .set('courseId', courseId.toString())
-      .set('date', date)
-      .set('hours', hours);
+      .set('occurrenceId', occurrenceId.toString())
+      .set('date', date);
 
     return this.http.get<{ booked: number }>(
       `${this.apiUrl}/lesson-occupancy`,

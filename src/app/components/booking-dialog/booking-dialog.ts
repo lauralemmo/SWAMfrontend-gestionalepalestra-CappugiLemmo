@@ -12,7 +12,6 @@ import { BookingService } from '../../services/booking.service';
 export class BookingDialog implements OnInit {
   bookingForm: FormGroup;
 
-  // Nuove proprietà per gestire l'occupazione
   postiOccupati: number = 0;
   isLoadingOccupancy: boolean = true;
   dataFormattataStringa: string;
@@ -31,6 +30,7 @@ export class BookingDialog implements OnInit {
     const giorno = String(dataSelezionata.getDate()).padStart(2, '0');
     this.dataFormattataStringa = `${anno}-${mese}-${giorno}`;
 
+    // Usato solo per la visualizzazione nel dialog, non viene più inviato al backend
     this.orarioFormattato = this.data.hoursOriginal;
     if (Array.isArray(this.data.hoursOriginal)) {
       const ore = String(this.data.hoursOriginal[0]).padStart(2, '0');
@@ -40,17 +40,15 @@ export class BookingDialog implements OnInit {
 
     this.bookingForm = this.fb.group({
       athleteId: [0],
-      courseId: [this.data.courseId, [Validators.required]],
-      date: [this.dataFormattataStringa, [Validators.required]],
-      hours: [this.orarioFormattato, [Validators.required]]
+      occurrenceId: [this.data.occurrenceId, [Validators.required]],
+      date: [this.dataFormattataStringa, [Validators.required]]
     });
   }
 
   ngOnInit() {
-    this.bookingService.getLessonOccupancy(this.data.courseId, this.dataFormattataStringa, this.orarioFormattato)
+    this.bookingService.getLessonOccupancy(this.data.occurrenceId, this.dataFormattataStringa)
       .subscribe({
         next: (res) => {
-          // Usiamo setTimeout per evitare l'errore NG0100 di Angular
           setTimeout(() => {
             this.postiOccupati = res.booked;
             this.isLoadingOccupancy = false;
